@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+	/* Light mode */
+	--bg-color: #dcdddf;
+	--card-bg: #ffffff;
+	--text-color: #1a1a1a;
+	--accent-color: #0ea5e9;
+	--secondary-color: #64748b;
+	--border-color: #383d43;
+	--toggle-bg-color: #0f172a;
+	--text-on-accent-color: #ffffff;
+}
+
+[data-theme="dark"] {
+	--bg-color: #0f172a;
+	--card-bg: #1e293b;
+	--text-color: #f8fafc;
+	--accent-color: #38bdf8;
+	--secondary-color: #94a3b8;
+	--border-color: #334155;
+	--toggle-bg-color: #f4f6f8;
+	--text-on-accent-color: #2c3747;
+}
+
+@theme inline {
+	--color-background: var(--bg-color);
+	--color-card: var(--card-bg);
+	--color-text: var(--text-color);
+	--color-accent: var(--accent-color);
+	--color-secondary: var(--secondary-color);
+	--color-border: var(--border-color);
+	--color-toggle: var(--toggle-bg-color);
+	--color-text-on-accent: var(--text-on-accent-color);
+}
+
+@layer base {
+	h1 {
+		@apply text-3xl md:text-5xl lg:text-6xl font-bold transition-colors duration-300 ease-in;
+	}
+	h2 {
+		@apply text-2xl md:text-4xl lg:text-5xl font-semibold;
+	}
+	h3 {
+		@apply text-xl md:text-3xl lg:text-4xl font-semibold;
+	}
+	h4 {
+		@apply text-lg md:text-2xl lg:text-3xl font-medium;
+	}
+	h5 {
+		@apply text-base md:text-xl lg:text-2xl font-medium;
+	}
+	h6 {
+		@apply text-sm md:text-base lg:text-lg font-medium;
+	}
+	body {
+		@apply bg-background text-text transition-colors duration-300 ease-in text-base;
+	}
+}

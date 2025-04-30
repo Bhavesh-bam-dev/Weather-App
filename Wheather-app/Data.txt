@@ -1,0 +1,5 @@
+ Current Data: http://api.weatherapi.com/v1/current.json?q=surat&key=971fd5f63d4c41009fb142617251504
+
+ Search Location name:  http://api.weatherapi.com/v1/search.json?q=sura&key=971fd5f63d4c41009fb142617251504
+
+ Forecast Data:  http://api.weatherapi.com/v1/forecast.json?q=surat&key=971fd5f63d4c41009fb142617251504&days=7
