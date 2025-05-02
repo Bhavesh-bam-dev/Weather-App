@@ -48,7 +48,7 @@ const CurrentData = ({ query, format }: CurrentDataProps) => {
 					<img src={data.current.condition.icon} className="w-16 h-16 object-cover" />
 					<p className="text-xl">{data.location}</p>
 				</div>
-				<div className="flex flex-col items-center justify-center gap-2 text-sm">
+				<div className="flex flex-col items-center justify-center gap-2 text-lg">
 					<span>{date}</span>
 					<span>{time}</span>
 				</div>

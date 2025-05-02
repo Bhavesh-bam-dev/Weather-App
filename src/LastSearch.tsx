@@ -1,37 +1,36 @@
-import { SetStateAction, useEffect, useState } from "react";
+import { SetStateAction } from "react";
 
 interface Props {
 	setLocation: React.Dispatch<SetStateAction<string>>;
 }
 
 const LastSearch = ({ setLocation }: Props) => {
-	const [items, setItems] = useState<string[]>([]);
+	const history = localStorage.getItem("history");
+	const items: string[] = history ? JSON.parse(history).reverse() : [];
 
-	useEffect(() => {
-		const searchHistory = localStorage.getItem("history");
-		if (!searchHistory) {
-			setItems([]);
-			return;
-		}
-		const searchHistoryList = JSON.parse(searchHistory);
-		setItems(searchHistoryList);
-	}, []);
+	console.log("Render LastSearch");
 
 	const onHistoryClick = (item: string) => {
 		setLocation(item);
 	};
 
-	console.log("As", items);
 	if (items.length <= 0) return;
 
 	return (
-		<ul>
-			{items.map((item) => (
-				<li>
-					<a onClick={() => onHistoryClick(item)}>{item}</a>
-				</li>
-			))}
-		</ul>
+		<div className="pb-4">
+			<div className="mt-4 p-4 bg-card rounded-lg mb-4">
+				<h3 className="pb-2">Previous Searches</h3>
+				<ul>
+					{items.map((item, index) => (
+						<li className="p-1" key={index}>
+							<a onClick={() => onHistoryClick(item)} className=" cursor-pointer text-lg text-neutral-600 hover:text-text">
+								{item}
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
 	);
 };
 
