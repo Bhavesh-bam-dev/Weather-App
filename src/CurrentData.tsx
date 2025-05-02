@@ -42,7 +42,7 @@ const CurrentData = ({ query, format }: CurrentDataProps) => {
 	const date = `${getOrdinal(day)} ${month}`;
 
 	return (
-		<div className="flex flex-col gap-4 my-4 p-6 rounded-[8px] w-fit bg-card transition-colors duration-300 ease-in">
+		<div className="flex flex-col gap-4 my-4 p-6 rounded-[8px] w-full md:w-fit bg-card transition-colors duration-300 ease-in">
 			<div className="flex items-center gap-2 font-medium justify-evenly">
 				<div className="flex flex-col items-center">
 					<img src={data.current.condition.icon} className="w-16 h-16 object-cover" />

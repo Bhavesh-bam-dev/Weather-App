@@ -23,7 +23,7 @@ const LastSearch = ({ setLocation }: Props) => {
 				<ul>
 					{items.map((item, index) => (
 						<li className="p-1" key={index}>
-							<a onClick={() => onHistoryClick(item)} className=" cursor-pointer text-lg text-neutral-600 hover:text-text">
+							<a onClick={() => onHistoryClick(item)} className=" cursor-pointer text-lg text-text-secondary hover:text-text">
 								{item}
 							</a>
 						</li>
