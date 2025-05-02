@@ -57,19 +57,21 @@ const CurrentData = ({ query, format }: CurrentDataProps) => {
 				<div className="flex flex-col justify-around gap-2">
 					<p>
 						<span className="font-medium">Temperature:</span>{" "}
-						<span>{format === "C" ? data.current.temp_c + " \u2103" : data.current.temp_f + " \u2109"}</span>
+						<span className=" whitespace-nowrap">{format === "C" ? data.current.temp_c + " \u2103" : data.current.temp_f + " \u2109"}</span>
 					</p>
 					<p>
-						<span className="font-medium">Humidity:</span> {data.current.humidity}%
+						<span className="font-medium">Humidity:</span> <span className=" whitespace-nowrap">{data.current.humidity}%</span>
 					</p>
 				</div>
 				<div className="flex flex-col justify-around gap-2">
 					<p>
 						<span className="font-medium">Feels like:</span>{" "}
-						{format === "C" ? data.current.feelslike_c + " \u2103" : data.current.feelslike_f + " \u2109"}
+						<span className=" whitespace-nowrap">
+							{format === "C" ? data.current.feelslike_c + " \u2103" : data.current.feelslike_f + " \u2109"}
+						</span>
 					</p>
 					<p>
-						<span className="font-medium">Wind:</span> {data.current.wind_kph} km/h
+						<span className="font-medium">Wind:</span> <span className=" whitespace-nowrap">{data.current.wind_kph} km/h</span>
 					</p>
 				</div>
 			</div>

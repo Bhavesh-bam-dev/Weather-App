@@ -18,10 +18,10 @@ const WeeklyData = ({ data, format }: WeeklyDataProps) => {
 						<div className="flex-1 flex flex-col items-center rounded-[8px] bg-accent text-text-on-accent p-4" key={item.day.date}>
 							<span>{numToDay[date.getDay()]}</span>
 							<img src={item.day.icon} className="aspect-square max-w-none" />
-							<p>
+							<p className=" whitespace-nowrap">
 								<span className="text-xl font-bold">↓</span> {format === "C" ? item.day.mintemp_c + " ℃" : item.day.mintemp_f + " ℉"}
 							</p>
-							<p>
+							<p className=" whitespace-nowrap">
 								<span className="text-xl font-bold">↑</span> {format === "C" ? item.day.maxtemp_c + " ℃" : item.day.maxtemp_f + " ℉"}
 							</p>
 						</div>
