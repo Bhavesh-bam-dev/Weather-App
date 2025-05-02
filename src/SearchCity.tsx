@@ -46,7 +46,9 @@ const SearchCity = (props: SearchCityProps) => {
 				const searchHistory = localStorage.getItem("history");
 				if (searchHistory) {
 					const searchHistoryArray: string[] = JSON.parse(searchHistory);
-					searchHistoryArray?.push(selectedItem.name);
+					if (!searchHistoryArray.includes(selectedItem.name)) {
+						searchHistoryArray?.push(selectedItem.name);
+					}
 					const newSearchHistoryArray = searchHistoryArray.slice(-5);
 					localStorage.setItem("history", JSON.stringify(newSearchHistoryArray));
 				} else {
